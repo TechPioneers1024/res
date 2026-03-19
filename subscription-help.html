@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Help</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 24px 20px;
+            line-height: 1.7;
+        }
+        h1 {
+            font-size: 20px;
+            color: #1ae5ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section {
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1ae5ff;
+            margin-bottom: 10px;
+        }
+        .steps { padding-left: 20px; }
+        .steps li { margin-bottom: 8px; font-size: 14px; }
+        .example {
+            background: rgba(26,229,255,0.08);
+            border-left: 3px solid #1ae5ff;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #b0b0b0;
+        }
+        .contact {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-top: 24px;
+        }
+        .contact strong { color: #e0e0e0; }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<script>
+const i18n = {
+    en: {
+        title: "Subscription Not Showing?",
+        whyTitle: "Why does this happen?",
+        whyText: "Your subscription is linked to your Google Play account, not to your device. If the subscription is missing, it's usually because a different Google account is currently active.",
+        howTitle: "How to fix",
+        steps: [
+            "Open the <strong>Google Play Store</strong> app",
+            "Tap your profile icon in the top right corner and check the signed-in account",
+            "Make sure it is the <strong>same account</strong> you used when subscribing",
+            "Return to our app — your subscription should be restored"
+        ],
+        example: "For example, if you subscribed with <strong>xx@gmail.com</strong>, make sure Google Play is also signed in with <strong>xx@gmail.com</strong>.",
+        contact: "Still need help? Go to <strong>Settings → Feedback</strong> to contact us."
+    },
+    zh: {
+        title: "订阅丢失了？",
+        whyTitle: "为什么会这样？",
+        whyText: "您的订阅状态保存在 Google Play 账号中，而非设备上。如果订阅丢失，通常是因为当前激活的 Google 账号与订阅时使用的账号不一致。",
+        howTitle: "如何解决",
+        steps: [
+            "打开 <strong>Google Play 商店</strong>",
+            "点击右上角头像，查看当前登录的账号",
+            "确保当前账号与您 <strong>订阅时使用的账号一致</strong>",
+            "返回本应用，订阅状态应该会恢复"
+        ],
+        example: "例如，如果您订阅时使用的是 <strong>xx@gmail.com</strong>，请确保 Google Play 当前登录的也是 <strong>xx@gmail.com</strong>。",
+        contact: "仍无法解决？请前往 <strong>设置 → 反馈</strong> 联系我们。"
+    },
+    ja: {
+        title: "サブスクリプションが表示されない？",
+        whyTitle: "なぜこうなるの？",
+        whyText: "サブスクリプションはデバイスではなく、Google Play アカウントに紐づいています。サブスクリプションが見つからない場合、現在アクティブな Google アカウントが購入時と異なっている可能性があります。",
+        howTitle: "解決方法",
+        steps: [
+            "<strong>Google Play ストア</strong>を開く",
+            "右上のプロフィールアイコンをタップし、ログイン中のアカウントを確認",
+            "サブスクリプション購入時と<strong>同じアカウント</strong>であることを確認",
+            "アプリに戻ると、サブスクリプションが復元されるはずです"
+        ],
+        example: "例えば、<strong>xx@gmail.com</strong> で購入した場合、Google Play にも <strong>xx@gmail.com</strong> でログインしていることを確認してください。",
+        contact: "まだ解決しない場合は、<strong>設定 → フィードバック</strong>からお問い合わせください。"
+    },
+    ko: {
+        title: "구독이 표시되지 않나요?",
+        whyTitle: "왜 이런 일이 발생하나요?",
+        whyText: "구독은 기기가 아닌 Google Play 계정에 연결되어 있습니다. 구독이 보이지 않는 경우, 현재 활성화된 Google 계정이 구독 시 사용한 계정과 다를 수 있습니다.",
+        howTitle: "해결 방법",
+        steps: [
+            "<strong>Google Play 스토어</strong>를 여세요",
+            "오른쪽 상단 프로필 아이콘을 탭하여 로그인된 계정을 확인하세요",
+            "구독 시 사용한 <strong>동일한 계정</strong>인지 확인하세요",
+            "앱으로 돌아가면 구독이 복원됩니다"
+        ],
+        example: "예를 들어, <strong>xx@gmail.com</strong>으로 구독했다면 Google Play에도 <strong>xx@gmail.com</strong>으로 로그인되어 있는지 확인하세요.",
+        contact: "아직 해결되지 않나요? <strong>설정 → 피드백</strong>에서 문의해 주세요."
+    }
+};
+
+function getLang() {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get("lang") || "en";
+    return i18n[lang] ? lang : "en";
+}
+
+function render() {
+    const t = i18n[getLang()];
+    document.getElementById("content").innerHTML = `
+        <h1>${t.title}</h1>
+        <div class="section">
+            <div class="section-title">${t.whyTitle}</div>
+            <div>${t.whyText}</div>
+        </div>
+        <div class="section">
+            <div class="section-title">${t.howTitle}</div>
+            <ol class="steps">${t.steps.map(s => `<li>${s}</li>`).join("")}</ol>
+            <div class="example">${t.example}</div>
+        </div>
+        <div class="contact">${t.contact}</div>
+    `;
+}
+
+render();
+</script>
+</body>
+</html>
