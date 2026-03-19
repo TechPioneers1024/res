@@ -4,7 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscription Help</title>
-    <style></style>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            padding: 24px 20px;
+            line-height: 1.7;
+        }
+        h1 {
+            font-size: 20px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        .steps { padding-left: 20px; }
+        .steps li { margin-bottom: 8px; font-size: 14px; color: #444; }
+        .example {
+            background: #e8f0fe;
+            border-left: 3px solid #1a73e8;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #555;
+        }
+        .contact {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-top: 24px;
+        }
+        .contact strong { color: #333; }
+    </style>
 </head>
 <body>
 <div id="content"></div>
@@ -65,6 +111,188 @@ const i18n = {
         ],
         example: "예를 들어, <strong>xx@gmail.com</strong>으로 구독했다면 Google Play에도 <strong>xx@gmail.com</strong>으로 로그인되어 있는지 확인하세요.",
         contact: "아직 해결되지 않나요? <strong>설정 → 피드백</strong>에서 문의해 주세요."
+    },
+    "zh-TW": {
+        title: "訂閱遺失了？",
+        whyTitle: "為什麼會這樣？",
+        whyText: "您的訂閱狀態儲存在 Google Play 帳號中，而非裝置上。如果訂閱遺失，通常是因為目前啟用的 Google 帳號與訂閱時使用的帳號不一致。",
+        howTitle: "如何解決",
+        steps: [
+            "開啟 <strong>Google Play 商店</strong>",
+            "點擊右上角頭像，查看目前登入的帳號",
+            "確保目前帳號與您 <strong>訂閱時使用的帳號一致</strong>",
+            "返回本應用，訂閱狀態應該會恢復"
+        ],
+        example: "例如，如果您訂閱時使用的是 <strong>xx@gmail.com</strong>，請確保 Google Play 目前登入的也是 <strong>xx@gmail.com</strong>。",
+        contact: "仍無法解決？請前往 <strong>設定 → 反饋</strong> 聯繫我們。"
+    },
+    ar: {
+        title: "الاشتراك غير ظاهر؟",
+        whyTitle: "لماذا يحدث هذا؟",
+        whyText: "اشتراكك مرتبط بحساب Google Play الخاص بك، وليس بجهازك. إذا كان الاشتراك مفقودًا، فعادةً ما يكون السبب أن حساب Google النشط حاليًا مختلف عن الحساب الذي استخدمته عند الاشتراك.",
+        howTitle: "كيفية الإصلاح",
+        steps: [
+            "افتح تطبيق <strong>Google Play Store</strong>",
+            "اضغط على أيقونة الملف الشخصي في الزاوية العلوية اليمنى وتحقق من الحساب المسجّل",
+            "تأكد من أنه <strong>نفس الحساب</strong> الذي استخدمته عند الاشتراك",
+            "عد إلى تطبيقنا — يجب أن يتم استعادة اشتراكك"
+        ],
+        example: "على سبيل المثال، إذا اشتركت باستخدام <strong>xx@gmail.com</strong>، فتأكد من أن Google Play مسجّل الدخول أيضًا بـ <strong>xx@gmail.com</strong>.",
+        contact: "لا تزال بحاجة إلى مساعدة؟ انتقل إلى <strong>الإعدادات → الملاحظات</strong> للتواصل معنا."
+    },
+    de: {
+        title: "Abo wird nicht angezeigt?",
+        whyTitle: "Warum passiert das?",
+        whyText: "Ihr Abo ist mit Ihrem Google Play-Konto verknüpft, nicht mit Ihrem Gerät. Wenn das Abo fehlt, liegt es meist daran, dass ein anderes Google-Konto aktiv ist.",
+        howTitle: "So beheben Sie das Problem",
+        steps: [
+            "Öffnen Sie die <strong>Google Play Store</strong>-App",
+            "Tippen Sie oben rechts auf Ihr Profilsymbol und prüfen Sie das angemeldete Konto",
+            "Stellen Sie sicher, dass es <strong>dasselbe Konto</strong> ist, mit dem Sie abonniert haben",
+            "Kehren Sie zu unserer App zurück — Ihr Abo sollte wiederhergestellt sein"
+        ],
+        example: "Wenn Sie z. B. mit <strong>xx@gmail.com</strong> abonniert haben, stellen Sie sicher, dass Google Play auch mit <strong>xx@gmail.com</strong> angemeldet ist.",
+        contact: "Brauchen Sie noch Hilfe? Gehen Sie zu <strong>Einstellungen → Feedback</strong>, um uns zu kontaktieren."
+    },
+    es: {
+        title: "¿No aparece tu suscripción?",
+        whyTitle: "¿Por qué ocurre esto?",
+        whyText: "Tu suscripción está vinculada a tu cuenta de Google Play, no a tu dispositivo. Si la suscripción no aparece, generalmente es porque la cuenta de Google activa actualmente es diferente a la que usaste al suscribirte.",
+        howTitle: "Cómo solucionarlo",
+        steps: [
+            "Abre la aplicación <strong>Google Play Store</strong>",
+            "Toca el icono de perfil en la esquina superior derecha y verifica la cuenta con la que iniciaste sesión",
+            "Asegúrate de que sea la <strong>misma cuenta</strong> que usaste al suscribirte",
+            "Vuelve a nuestra app — tu suscripción debería restaurarse"
+        ],
+        example: "Por ejemplo, si te suscribiste con <strong>xx@gmail.com</strong>, asegúrate de que Google Play también tenga la sesión iniciada con <strong>xx@gmail.com</strong>.",
+        contact: "¿Aún necesitas ayuda? Ve a <strong>Configuración → Comentarios</strong> para contactarnos."
+    },
+    fr: {
+        title: "Abonnement introuvable ?",
+        whyTitle: "Pourquoi cela se produit-il ?",
+        whyText: "Votre abonnement est lié à votre compte Google Play, pas à votre appareil. Si l'abonnement est manquant, c'est généralement parce qu'un autre compte Google est actuellement actif.",
+        howTitle: "Comment résoudre le problème",
+        steps: [
+            "Ouvrez l'application <strong>Google Play Store</strong>",
+            "Appuyez sur l'icône de profil en haut à droite et vérifiez le compte connecté",
+            "Assurez-vous qu'il s'agit du <strong>même compte</strong> que celui utilisé lors de l'abonnement",
+            "Revenez à notre application — votre abonnement devrait être restauré"
+        ],
+        example: "Par exemple, si vous vous êtes abonné avec <strong>xx@gmail.com</strong>, assurez-vous que Google Play est également connecté avec <strong>xx@gmail.com</strong>.",
+        contact: "Besoin d'aide ? Allez dans <strong>Paramètres → Commentaires</strong> pour nous contacter."
+    },
+    "in": {
+        title: "Langganan tidak muncul?",
+        whyTitle: "Mengapa ini terjadi?",
+        whyText: "Langganan Anda terhubung ke akun Google Play, bukan ke perangkat Anda. Jika langganan hilang, biasanya karena akun Google yang aktif saat ini berbeda dari akun yang digunakan saat berlangganan.",
+        howTitle: "Cara memperbaiki",
+        steps: [
+            "Buka aplikasi <strong>Google Play Store</strong>",
+            "Ketuk ikon profil di pojok kanan atas dan periksa akun yang masuk",
+            "Pastikan itu adalah <strong>akun yang sama</strong> yang Anda gunakan saat berlangganan",
+            "Kembali ke aplikasi kami — langganan Anda seharusnya pulih"
+        ],
+        example: "Misalnya, jika Anda berlangganan dengan <strong>xx@gmail.com</strong>, pastikan Google Play juga masuk dengan <strong>xx@gmail.com</strong>.",
+        contact: "Masih butuh bantuan? Buka <strong>Pengaturan → Umpan Balik</strong> untuk menghubungi kami."
+    },
+    it: {
+        title: "L'abbonamento non viene visualizzato?",
+        whyTitle: "Perché succede?",
+        whyText: "Il tuo abbonamento è collegato al tuo account Google Play, non al dispositivo. Se l'abbonamento non è visibile, di solito è perché l'account Google attivo è diverso da quello usato per l'abbonamento.",
+        howTitle: "Come risolvere",
+        steps: [
+            "Apri l'app <strong>Google Play Store</strong>",
+            "Tocca l'icona del profilo in alto a destra e verifica l'account collegato",
+            "Assicurati che sia lo <strong>stesso account</strong> usato per l'abbonamento",
+            "Torna alla nostra app — il tuo abbonamento dovrebbe essere ripristinato"
+        ],
+        example: "Ad esempio, se hai sottoscritto con <strong>xx@gmail.com</strong>, assicurati che Google Play sia connesso con <strong>xx@gmail.com</strong>.",
+        contact: "Hai ancora bisogno di aiuto? Vai su <strong>Impostazioni → Feedback</strong> per contattarci."
+    },
+    ms: {
+        title: "Langganan tidak dipaparkan?",
+        whyTitle: "Mengapa ini berlaku?",
+        whyText: "Langganan anda dikaitkan dengan akaun Google Play anda, bukan peranti anda. Jika langganan hilang, biasanya kerana akaun Google yang aktif sekarang berbeza daripada akaun yang digunakan semasa melanggan.",
+        howTitle: "Cara membetulkan",
+        steps: [
+            "Buka aplikasi <strong>Google Play Store</strong>",
+            "Ketik ikon profil di penjuru kanan atas dan semak akaun yang dilog masuk",
+            "Pastikan ia adalah <strong>akaun yang sama</strong> yang anda gunakan semasa melanggan",
+            "Kembali ke aplikasi kami — langganan anda sepatutnya dipulihkan"
+        ],
+        example: "Contohnya, jika anda melanggan dengan <strong>xx@gmail.com</strong>, pastikan Google Play juga dilog masuk dengan <strong>xx@gmail.com</strong>.",
+        contact: "Masih perlukan bantuan? Pergi ke <strong>Tetapan → Maklum Balas</strong> untuk menghubungi kami."
+    },
+    pt: {
+        title: "Assinatura não aparece?",
+        whyTitle: "Por que isso acontece?",
+        whyText: "Sua assinatura está vinculada à sua conta do Google Play, não ao seu dispositivo. Se a assinatura estiver faltando, geralmente é porque uma conta Google diferente está ativa no momento.",
+        howTitle: "Como resolver",
+        steps: [
+            "Abra o aplicativo <strong>Google Play Store</strong>",
+            "Toque no ícone de perfil no canto superior direito e verifique a conta conectada",
+            "Certifique-se de que é a <strong>mesma conta</strong> usada ao assinar",
+            "Volte ao nosso app — sua assinatura deve ser restaurada"
+        ],
+        example: "Por exemplo, se você assinou com <strong>xx@gmail.com</strong>, certifique-se de que o Google Play também está conectado com <strong>xx@gmail.com</strong>.",
+        contact: "Ainda precisa de ajuda? Vá para <strong>Configurações → Feedback</strong> para entrar em contato."
+    },
+    ru: {
+        title: "Подписка не отображается?",
+        whyTitle: "Почему это происходит?",
+        whyText: "Ваша подписка привязана к аккаунту Google Play, а не к устройству. Если подписка пропала, обычно это связано с тем, что сейчас активен другой аккаунт Google.",
+        howTitle: "Как исправить",
+        steps: [
+            "Откройте приложение <strong>Google Play Store</strong>",
+            "Нажмите на значок профиля в правом верхнем углу и проверьте, какой аккаунт подключён",
+            "Убедитесь, что это <strong>тот же аккаунт</strong>, который использовался при оформлении подписки",
+            "Вернитесь в наше приложение — подписка должна восстановиться"
+        ],
+        example: "Например, если вы оформили подписку через <strong>xx@gmail.com</strong>, убедитесь, что Google Play тоже авторизован под <strong>xx@gmail.com</strong>.",
+        contact: "Нужна помощь? Перейдите в <strong>Настройки → Обратная связь</strong>, чтобы связаться с нами."
+    },
+    th: {
+        title: "การสมัครสมาชิกไม่แสดง?",
+        whyTitle: "ทำไมถึงเกิดเหตุการณ์นี้?",
+        whyText: "การสมัครสมาชิกของคุณเชื่อมโยงกับบัญชี Google Play ไม่ใช่อุปกรณ์ของคุณ หากการสมัครสมาชิกหายไป มักเป็นเพราะบัญชี Google ที่ใช้งานอยู่ในปัจจุบันแตกต่างจากบัญชีที่ใช้สมัคร",
+        howTitle: "วิธีแก้ไข",
+        steps: [
+            "เปิดแอป <strong>Google Play Store</strong>",
+            "แตะไอคอนโปรไฟล์ที่มุมขวาบนและตรวจสอบบัญชีที่ลงชื่อเข้าใช้",
+            "ตรวจสอบให้แน่ใจว่าเป็น<strong>บัญชีเดียวกัน</strong>กับที่คุณใช้สมัครสมาชิก",
+            "กลับไปที่แอปของเรา — การสมัครสมาชิกของคุณควรจะกลับมา"
+        ],
+        example: "เช่น หากคุณสมัครด้วย <strong>xx@gmail.com</strong> ให้ตรวจสอบว่า Google Play ลงชื่อเข้าใช้ด้วย <strong>xx@gmail.com</strong> เช่นกัน",
+        contact: "ยังต้องการความช่วยเหลือ? ไปที่ <strong>การตั้งค่า → ส่งความคิดเห็น</strong> เพื่อติดต่อเรา"
+    },
+    tr: {
+        title: "Abonelik görünmüyor mu?",
+        whyTitle: "Bu neden oluyor?",
+        whyText: "Aboneliğiniz cihazınıza değil, Google Play hesabınıza bağlıdır. Abonelik görünmüyorsa, genellikle şu anda aktif olan Google hesabının abone olurken kullandığınız hesaptan farklı olmasındandır.",
+        howTitle: "Nasıl düzeltilir",
+        steps: [
+            "<strong>Google Play Store</strong> uygulamasını açın",
+            "Sağ üst köşedeki profil simgesine dokunun ve giriş yapılan hesabı kontrol edin",
+            "Abone olurken kullandığınız <strong>aynı hesap</strong> olduğundan emin olun",
+            "Uygulamamıza geri dönün — aboneliğiniz geri yüklenmiş olmalıdır"
+        ],
+        example: "Örneğin, <strong>xx@gmail.com</strong> ile abone olduysanız, Google Play'de de <strong>xx@gmail.com</strong> ile giriş yaptığınızdan emin olun.",
+        contact: "Hâlâ yardıma mı ihtiyacınız var? Bize ulaşmak için <strong>Ayarlar → Geri Bildirim</strong>'e gidin."
+    },
+    vi: {
+        title: "Không thấy gói đăng ký?",
+        whyTitle: "Tại sao điều này xảy ra?",
+        whyText: "Gói đăng ký của bạn được liên kết với tài khoản Google Play, không phải thiết bị. Nếu gói đăng ký bị mất, thường là do tài khoản Google đang hoạt động khác với tài khoản bạn đã sử dụng khi đăng ký.",
+        howTitle: "Cách khắc phục",
+        steps: [
+            "Mở ứng dụng <strong>Google Play Store</strong>",
+            "Nhấn vào biểu tượng hồ sơ ở góc trên bên phải và kiểm tra tài khoản đã đăng nhập",
+            "Đảm bảo đó là <strong>cùng một tài khoản</strong> bạn đã sử dụng khi đăng ký",
+            "Quay lại ứng dụng của chúng tôi — gói đăng ký sẽ được khôi phục"
+        ],
+        example: "Ví dụ, nếu bạn đăng ký bằng <strong>xx@gmail.com</strong>, hãy đảm bảo Google Play cũng đang đăng nhập bằng <strong>xx@gmail.com</strong>.",
+        contact: "Vẫn cần trợ giúp? Đi tới <strong>Cài đặt → Phản hồi</strong> để liên hệ với chúng tôi."
     }
 };
 
